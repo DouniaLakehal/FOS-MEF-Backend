@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>رسالة جديدة من صفحة الاتصال</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.5;
+            color: #555;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 style="text-align: center">📩 رسالة جديدة من صفحة الاتصال</h2>
+    <p><strong>👤 Full Name:</strong> <span th:text="${name}"></span></p>
+    <p><strong>✉️ Email:</strong> <span th:text="${email}"></span></p>
+    <p><strong>📝 Message:</strong></p>
+    <p th:text="${message}"></p>
+    <hr>
+    <p class="footer">تم إرسال هذه الرسالة من خلال صفحة الاتصال بموقعك.</p>
+</div>
+</body>
+</html>

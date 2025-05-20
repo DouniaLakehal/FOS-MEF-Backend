@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Static Template</title>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+    />
+    <script>
+        function formatDate(date) {
+            const options = {year: 'numeric', month: 'short', day: 'numeric'};
+            return new Date(date).toLocaleDateString('en-GB', options);
+        }
+
+        let date = new Date(); // or use a specific date like '2021-11-12'
+        let formattedDate = formatDate(date);
+        document.getElementById("date").innerText = formattedDate;
+    </script>
+</head>
+<body
+        style="
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      font-size: 14px;
+    "
+>
+<div
+        style="
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 45px 30px 60px;
+        background: #f4f7ff;
+        background-image: url(https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661497957196_595865/email-template-background-banner);
+        background-repeat: no-repeat;
+        background-size: 800px 452px;
+        background-position: top center;
+        font-size: 14px;
+        color: #434343;
+      "
+>
+    <header>
+        <table style="width: 100%;">
+            <tbody>
+            <tr style="height: 0;">
+                <td>
+                    <!--<img
+                            alt=""
+                            src="https://lncsm.org.ly/wp-content/uploads/2024/01/cropped-LOGO-ORG.png"
+                            height="100px"
+                    />-->
+                </td>
+                <td style="text-align: right;">
+                <span id="date" style="font-size: 16px; line-height: 30px; color: #ffffff;"
+                ></span
+                >
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </header>
+
+    <main>
+        <div
+                style="
+            margin: 0;
+            margin-top: 70px;
+            padding: 92px 30px 115px;
+            background: #ffffff;
+            border-radius: 30px;
+            text-align: center;
+          "
+        >
+            <div style="width: 100%; max-width: 489px; margin: 0 auto;">
+                <h1
+                        style="
+                margin: 0;
+                font-size: 24px;
+                font-weight: 500;
+                color: #1f1f1f;
+              "
+                >
+                    Ton OTP
+                </h1>
+                <p th:text="'Salut '+ ${nom}+','"
+                        style="
+                margin: 0;
+                margin-top: 17px;
+                font-size: 16px;
+                font-weight: 500;
+              "
+                >
+                </p>
+                <p
+                        style="
+                margin: 0;
+                margin-top: 17px;
+                font-weight: 500;
+                letter-spacing: 0.56px;
+              "
+                >
+                    Merci d’avoir choisi la Fondation des Œuvres Sociales du Personnel du MEF.
+                    Veuillez utiliser le code OTP suivant pour finaliser la procédure.
+                    Ne partagez pas ce code avec d’autres personnes.
+                </p>
+                <p th:text="${code}"
+                        style="
+                margin: 0;
+                margin-top: 60px;
+                font-size: 40px;
+                font-weight: 600;
+                letter-spacing: 25px;
+                color: #ba3d4f;
+              "
+                >
+                </p>
+            </div>
+        </div>
+
+        <p
+                style="
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 90px;
+            text-align: center;
+            font-weight: 500;
+            color: #8c8c8c;
+          "
+        >
+            Besoin d’aide ? Demandez à
+            <a href="mailto:contact@fos.finances.gov.ma" style="color: #499fb6; text-decoration: none;">contact@fos.finances.gov.ma</a>
+        </p>
+    </main>
+
+    <footer
+            style="
+          width: 100%;
+          max-width: 490px;
+          margin: 20px auto 0;
+          text-align: center;
+          border-top: 1px solid #e6ebf1;
+        "
+    >
+        <p
+                style="
+            margin: 0;
+            margin-top: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #434343;
+          "
+        >
+            Fondation des Œuvres Sociales du Personnel du MEF
+        </p>
+        <p style="margin: 0; margin-top: 8px; color: #434343;">
+            مؤسسة الأعمال الاجتماعية لموظفي وزارة الاقتصاد والمالية
+        </p>
+        <div style="margin: 0; margin-top: 16px;">
+            <a href="https://facebook.com/FOSMEF" target="_blank" style="display: inline-block;">
+                <img
+                        width="36px"
+                        alt="Facebook"
+                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661502815169_682499/email-template-icon-facebook"
+                />
+            </a>
+            <a
+                    href="https://instagram.com/FOSMEF"
+                    target="_blank"
+                    style="display: inline-block; margin-left: 8px;"
+            >
+                <img
+                        width="36px"
+                        alt="Instagram"
+                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661504218208_684135/email-template-icon-instagram"
+                /></a>
+            <a
+                    href="https://twitter.com/FOSMEF"
+                    target="_blank"
+                    style="display: inline-block; margin-left: 8px;"
+            >
+                <img
+                        width="36px"
+                        alt="Twitter"
+                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661503043040_372004/email-template-icon-twitter"
+                />
+            </a>
+        </div>
+        <p style="margin: 0; margin-top: 16px; color: #434343;">
+            Copyright ©
+            <script>document.write(new Date().getFullYear())</script>
+            Fondation des Œuvres Sociales du Personnel du MEF. Tous droits réservés.
+        </p>
+    </footer>
+</div>
+</body>
+</html>
